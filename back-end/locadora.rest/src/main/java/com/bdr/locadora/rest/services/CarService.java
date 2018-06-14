@@ -32,4 +32,8 @@ public class CarService {
 		return this.cars.get(id);
 	}
 
+	public boolean delete(Long id) {
+		return this.cars.remove(id, this.cars.get(id));
+	}
+
 }

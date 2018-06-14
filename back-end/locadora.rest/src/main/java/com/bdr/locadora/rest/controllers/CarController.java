@@ -1,5 +1,6 @@
 package com.bdr.locadora.rest.controllers;
 
+import static org.springframework.http.MediaType.APPLICATION_JSON_UTF8_VALUE;
 import static org.springframework.web.bind.annotation.RequestMethod.DELETE;
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
@@ -19,7 +20,7 @@ import org.springframework.web.bind.annotation.RestController;
 import com.bdr.locadora.rest.models.Car;
 import com.bdr.locadora.rest.services.CarService;
 
-@RequestMapping("/v1/car")
+@RequestMapping("/v1/cars")
 @CrossOrigin
 @RestController
 public class CarController {
@@ -33,7 +34,7 @@ public class CarController {
 	 * @param car
 	 * @return
 	 */
-	@RequestMapping(path = "", method = POST)
+	@RequestMapping(path = "", method = POST, consumes = APPLICATION_JSON_UTF8_VALUE)
 	public Entry<Long, Car> create(@RequestBody Car car) {
 		return new SimpleEntry<>(1L, this.carService.load(1L));
 	}
@@ -44,7 +45,7 @@ public class CarController {
 	 * @param car
 	 * @return
 	 */
-	@RequestMapping(path = "/{id}", method = PUT)
+	@RequestMapping(path = "/{id}", method = PUT, consumes = APPLICATION_JSON_UTF8_VALUE)
 	public Entry<Long, Car> update(@PathVariable Long id, @RequestBody Car car) {
 		return new SimpleEntry<>(1L, this.carService.load(1L));
 	}
@@ -77,8 +78,8 @@ public class CarController {
 	 * @return Car
 	 */
 	@RequestMapping(path = "/{id}", method = DELETE)
-	public Car delete(@PathVariable Long id) {
-		return this.carService.load(id);
+	public boolean delete(@PathVariable Long id) {
+		return this.carService.delete(id);
 	}
 
 }
