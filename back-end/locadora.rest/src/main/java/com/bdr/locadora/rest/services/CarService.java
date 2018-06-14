@@ -24,4 +24,12 @@ public class CarService {
 		return this.cars.values();
 	}
 
+	public Car load(Long id) {
+		return this.cars.get(id);
+	}
+
+	public Car update(Long id) {
+		return this.cars.get(id);
+	}
+
 }
