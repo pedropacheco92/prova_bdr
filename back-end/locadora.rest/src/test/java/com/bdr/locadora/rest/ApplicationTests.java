@@ -1,4 +1,4 @@
-package com.prova.bdr.prova.bdr;
+package com.bdr.locadora.rest;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;
