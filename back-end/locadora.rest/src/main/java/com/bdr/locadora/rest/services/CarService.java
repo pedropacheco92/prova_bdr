@@ -15,9 +15,9 @@ public class CarService {
 	private Map<Long, Car> cars = new HashMap<>();
 
 	public CarService() {
-		this.cars.put(1L, new Car(2015, "Fiesta", Color.BLACK));
-		this.cars.put(2L, new Car(2014, "Corsa", Color.WHITE));
-		this.cars.put(3L, new Car(1992, "Ferrari", Color.RED));
+		this.cars.put(1L, new Car(1L, "Fiesta", 2015, Color.BLACK));
+		this.cars.put(2L, new Car(2L, "Corsa", 2014, Color.WHITE));
+		this.cars.put(3L, new Car(3L, "Ferrari", 1992, Color.RED));
 	}
 
 	public Collection<Car> loadAll() {

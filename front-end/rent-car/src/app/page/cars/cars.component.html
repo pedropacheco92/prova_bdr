@@ -22,15 +22,24 @@
     <!-- Color Column -->
     <ng-container matColumnDef="color">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Color </th>
-      <td mat-cell *matCellDef="let row" [style.color]="row.color"> {{row.color}} </td>
+      <td mat-cell *matCellDef="let row">
+          <div [style.background-color]="row.color" class="div-color">
+          </div>
+          <!-- <mat-chip-list>
+            <mat-chip>{{row.color}}</mat-chip>
+          </mat-chip-list> -->
+      </td>
     </ng-container>
 
     <ng-container matColumnDef="action">
       <th mat-header-cell *matHeaderCellDef mat-sort-header> Action </th>
-      <td mat-cell *matCellDef="let row" [style.color]="row.color">
-        <button mat-icon-button (click)="onClickMe(row)">
-          <mat-icon aria-label="Example icon-button with a heart icon">favorite</mat-icon>
+      <td mat-cell *matCellDef="let row">
+        <button mat-icon-button (click)="onEdit(row)">
+          <mat-icon aria-label="edit">edit</mat-icon>
         </button>
+        <button mat-icon-button (click)="onDelete(row)">
+            <mat-icon aria-label="delete">delete_forever</mat-icon>
+          </button>
       </td>
     </ng-container>
 

@@ -1,8 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MatToolbarModule, MatButtonModule, MatIconModule,
-  MatTableModule, MatSortModule, MatPaginatorModule, MatTabsModule, MatFormFieldModule, MatInputModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule, MatTableModule, MatSortModule,
+  MatPaginatorModule, MatTabsModule, MatFormFieldModule, MatInputModule, MatChipsModule } from '@angular/material';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -54,7 +54,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatTabsModule,
     MatFormFieldModule,
     BrowserAnimationsModule,
-    MatInputModule
+    MatInputModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -6,9 +6,7 @@ import static org.springframework.web.bind.annotation.RequestMethod.GET;
 import static org.springframework.web.bind.annotation.RequestMethod.POST;
 import static org.springframework.web.bind.annotation.RequestMethod.PUT;
 
-import java.util.AbstractMap.SimpleEntry;
 import java.util.Collection;
-import java.util.Map.Entry;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -35,8 +33,8 @@ public class CarController {
 	 * @return
 	 */
 	@RequestMapping(path = "", method = POST, consumes = APPLICATION_JSON_UTF8_VALUE)
-	public Entry<Long, Car> create(@RequestBody Car car) {
-		return new SimpleEntry<>(1L, this.carService.load(1L));
+	public Car create(@RequestBody Car car) {
+		return this.carService.create(car);
 	}
 
 	/**
@@ -46,8 +44,8 @@ public class CarController {
 	 * @return
 	 */
 	@RequestMapping(path = "/{id}", method = PUT, consumes = APPLICATION_JSON_UTF8_VALUE)
-	public Entry<Long, Car> update(@PathVariable Long id, @RequestBody Car car) {
-		return new SimpleEntry<>(1L, this.carService.load(1L));
+	public Car update(@PathVariable Long id, @RequestBody Car car) {
+		return this.carService.update(id, car);
 	}
 
 	/**

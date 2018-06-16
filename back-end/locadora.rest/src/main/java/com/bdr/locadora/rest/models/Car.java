@@ -11,9 +11,11 @@ import lombok.Setter;
 @NoArgsConstructor
 public class Car {
 
-	private int year;
+	private Long id;
 
 	private String model;
+
+	private int year;
 
 	private Color color;
 

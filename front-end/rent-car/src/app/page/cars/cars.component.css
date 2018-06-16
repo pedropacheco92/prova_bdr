@@ -30,4 +30,10 @@
     overflow: auto;
     /* max-height: 1000px; */
   }
-  
+
+  .div-color {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+  }

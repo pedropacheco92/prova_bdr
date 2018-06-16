@@ -41,4 +41,12 @@ export class CarsComponent implements OnInit {
     this.router.navigate(['/car']);
   }
 
+  onEdit(row) {
+    console.log(row);
+  }
+
+  onDelete(row) {
+    console.log(row);
+  }
+
 }
