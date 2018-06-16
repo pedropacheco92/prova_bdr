@@ -1,10 +1,12 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { MatToolbarModule, MatButtonModule, MatIconModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatIconModule,
+  MatTableModule, MatSortModule, MatPaginatorModule, MatTabsModule, MatFormFieldModule } from '@angular/material';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
 import { CarsComponent } from './page/cars/cars.component';
@@ -45,7 +47,13 @@ export function HttpLoaderFactory(http: HttpClient) {
   }),
     MatToolbarModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatTabsModule,
+    MatFormFieldModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
