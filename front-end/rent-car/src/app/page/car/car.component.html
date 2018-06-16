@@ -1,20 +1,22 @@
 <div class="example-container">
   <p>{{ label }}</p>
+  <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input matInput placeholder="Model">
+      <input matInput placeholder="Model" formControlName="model">
     </mat-form-field>
-  
+
     <mat-form-field>
-        <input matInput placeholder="Year">
+      <input matInput placeholder="Year" formControlName="year" maxlength="4" type="number" class="input-year">
     </mat-form-field>
-  
+
     <mat-form-field>
-      <mat-select placeholder="Select">
-        <mat-option value="option">Option</mat-option>
+      <mat-select placeholder="Select" formControlName="color">
+        <mat-option *ngFor="let color of colors" value="{{color}}">{{ getColor(color) }}</mat-option>
       </mat-select>
     </mat-form-field>
-    <div>
-      <button mat-raised-button color="primary" class="save">{{ labelButton }}</button>
-      <button mat-raised-button (click)="onCancelClicked()">{{ 'CANCEL' | translate }}</button>
-    </div>
+  </form>
+  <div>
+    <button mat-raised-button color="primary" type="submit" class="save" [disabled]="!carForm.valid" (click)="onSubmit()">{{ labelButton }}</button>
+    <button mat-raised-button (click)="onCancelClicked()">{{ 'CANCEL' | translate }}</button>
   </div>
+</div>

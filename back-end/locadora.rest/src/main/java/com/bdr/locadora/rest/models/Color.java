@@ -2,6 +2,6 @@ package com.bdr.locadora.rest.models;
 
 public enum Color {
 
-	BLACK, WHITE, RED, BLUE;
+	BLACK, WHITE, RED, BLUE, GREEN, YELLOW;
 
 }

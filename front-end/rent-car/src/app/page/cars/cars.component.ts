@@ -41,12 +41,20 @@ export class CarsComponent implements OnInit {
     this.router.navigate(['/car']);
   }
 
-  onEdit(row) {
-    console.log(row);
+  onEdit(row: Car) {
+    this.router.navigate(['/car'], {queryParams: {id: row.id}});
   }
 
-  onDelete(row) {
-    console.log(row);
+  onDelete(row: Car) {
+    this.carService.deleteCar(row.id).subscribe(result => {
+      if (result) {
+        this.carService.getAllCars().subscribe(cars => {
+          this.dataSource = new MatTableDataSource(cars);
+        });
+      } else {
+        alert('Erro no deletar');
+      }
+    });
   }
 
 }

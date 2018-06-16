@@ -7,5 +7,8 @@
 
     "BLACK": "Preto",
     "WHITE": "Branco",
-    "RED": "Vermelho"
+    "RED": "Vermelho",
+    "BLUE": "Azul",
+    "GREEN": "Verde",
+    "YELLOW": "Amarelo"
 }

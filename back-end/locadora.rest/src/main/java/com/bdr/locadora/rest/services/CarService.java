@@ -18,6 +18,9 @@ public class CarService {
 		this.cars.put(1L, new Car(1L, "Fiesta", 2015, Color.BLACK));
 		this.cars.put(2L, new Car(2L, "Corsa", 2014, Color.WHITE));
 		this.cars.put(3L, new Car(3L, "Ferrari", 1992, Color.RED));
+		this.cars.put(4L, new Car(4L, "Lamborghini", 2015, Color.YELLOW));
+		this.cars.put(5L, new Car(5L, "Uno", 2014, Color.GREEN));
+		this.cars.put(6L, new Car(6L, "Jeep", 1992, Color.BLUE));
 	}
 
 	public Collection<Car> loadAll() {
@@ -42,7 +45,10 @@ public class CarService {
 	}
 
 	public Car create(Car car) {
-		this.cars.keySet().stream().max(Long::compareTo).ifPresent(id -> this.cars.put(id + 1, car));
+		this.cars.keySet().stream().max(Long::compareTo).ifPresent(id -> {
+			car.setId(id + 1);
+			this.cars.put(car.getId(), car);
+		});
 
 		return car;
 	}

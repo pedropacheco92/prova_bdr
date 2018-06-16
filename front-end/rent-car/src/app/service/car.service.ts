@@ -16,4 +16,21 @@ export class CarService {
   getAllCars(): Observable<Car[]> {
     return this.http.get<Car[]>(url);
   }
+
+  getCar(id: number): Observable<Car> {
+    return this.http.get<Car>(url + '/' + id);
+  }
+
+  saveCar(car: Car): Observable<Car> {
+    return this.http.post<Car>(url, car);
+  }
+
+  deleteCar(id: number): Observable<boolean> {
+    return this.http.delete<boolean>(url + '/' + id);
+  }
+
+  editCar(car: Car): Observable<Car> {
+    return this.http.put<Car>(url + '/' + car.id, car);
+  }
+
 }

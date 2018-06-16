@@ -7,5 +7,9 @@
 
     "BLACK": "Black",
     "WHITE": "White",
-    "RED": "Red"
+    "RED": "Red",
+    "BLUE": "Blue",
+    "GREEN": "Green",
+    "YELLOW": "Yellow"
+
 }

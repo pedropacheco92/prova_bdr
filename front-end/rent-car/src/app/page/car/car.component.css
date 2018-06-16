@@ -10,10 +10,16 @@
     border-radius: 2px;
   }
   
-  .example-container > * {
+  mat-form-field {
     width: 100%;
+    margin-right: 30px;
   }
 
   .save {
     margin-right: 30px;
   }
+
+input.input-year::-webkit-outer-spin-button,
+input.input-year::-webkit-inner-spin-button {
+  display: none;
+}
