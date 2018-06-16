@@ -2,7 +2,8 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatTableModule, MatSortModule,
-  MatPaginatorModule, MatTabsModule, MatFormFieldModule, MatInputModule, MatChipsModule } from '@angular/material';
+  MatPaginatorModule, MatTabsModule, MatFormFieldModule, MatInputModule, MatChipsModule, 
+  MatOptionModule, MatSelectModule } from '@angular/material';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
@@ -12,6 +13,7 @@ import { AppComponent } from './app.component';
 import { CarsComponent } from './page/cars/cars.component';
 import { CarComponent } from './page/car/car.component';
 import { MainComponent } from './page/main/main.component';
+import { FormsModule } from '@angular/forms';
 
 const appRoutes: Routes = [
   { path: '', pathMatch: 'full', redirectTo: 'main' },
@@ -55,7 +57,10 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatFormFieldModule,
     BrowserAnimationsModule,
     MatInputModule,
-    MatChipsModule
+    MatChipsModule,
+    FormsModule,
+    MatOptionModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]

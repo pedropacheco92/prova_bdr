@@ -1,0 +1,19 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-width: 400px;
+    margin: auto;
+    background-color: WhiteSmoke;
+    padding: 20px 50px;
+    margin-top: 100px;
+    border: 2px solid Gainsboro;
+    border-radius: 2px;
+  }
+  
+  .example-container > * {
+    width: 100%;
+  }
+
+  .save {
+    margin-right: 30px;
+  }

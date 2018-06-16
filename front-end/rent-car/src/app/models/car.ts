@@ -1,3 +1,3 @@
 export class Car {
-    constructor (private id: number, private model: string, private year: number, private color: string) {}
+    constructor (public id: number, public model: string, public year: number, public color: string) {}
 }

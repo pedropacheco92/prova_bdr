@@ -1,5 +1,11 @@
 {
+    "CANCEL": "Cancel",
     "CAR": "Car",
     "CARS": "Cars",
-    "RENT_CAR": "Rent a Car"
+    "RENT_CAR": "Rent a Car",
+    "SAVE": "Save",
+
+    "BLACK": "Black",
+    "WHITE": "White",
+    "RED": "Red"
 }

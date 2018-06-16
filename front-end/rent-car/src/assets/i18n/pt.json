@@ -1,5 +1,11 @@
 {
+    "CANCEL": "Cancel",
     "CAR": "Carro",
     "CARS": "Carros",
-    "RENT_CAR": "Locadora de carros"
+    "RENT_CAR": "Locadora de carros",
+    "SAVE": "Salvar",
+
+    "BLACK": "Preto",
+    "WHITE": "Branco",
+    "RED": "Vermelho"
 }

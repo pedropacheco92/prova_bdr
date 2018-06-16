@@ -1,4 +1,6 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-car',
@@ -7,9 +9,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CarComponent implements OnInit {
 
-  constructor() { }
+  label = 'label';
+  labelButton = 'save';
+
+  constructor(private translate: TranslateService, private router: Router) { }
 
   ngOnInit() {
+  }
+
+  onCancelClicked() {
+    this.router.navigate(['/cars']);
   }
 
 }
