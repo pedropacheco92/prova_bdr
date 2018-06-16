@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { TranslateService } from '@ngx-translate/core';
+// import { TranslateService } from '@ngx-translate/core';
 
 @Component({
   selector: 'app-root',
@@ -10,8 +10,8 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
   title = 'app';
 
-  constructor(private router: Router, private translate: TranslateService) {
-    this.translate.setDefaultLang('pt');
+  constructor(private router: Router) {
+    // this.translate.setDefaultLang('pt');
   }
 
   onHomeClicked() {

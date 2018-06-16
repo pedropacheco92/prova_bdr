@@ -28,12 +28,23 @@ public class CarService {
 		return this.cars.get(id);
 	}
 
-	public Car update(Long id) {
-		return this.cars.get(id);
+	public Car update(Long id, Car car) {
+		if (this.cars.containsKey(id)) {
+			this.cars.replace(id, car);
+		} else {
+			this.cars.put(id, car);
+		}
+		return car;
 	}
 
 	public boolean delete(Long id) {
 		return this.cars.remove(id, this.cars.get(id));
+	}
+
+	public Car create(Car car) {
+		this.cars.keySet().stream().max(Long::compareTo).ifPresent(id -> this.cars.put(id + 1, car));
+
+		return car;
 	}
 
 }
