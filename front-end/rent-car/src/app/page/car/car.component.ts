@@ -57,14 +57,14 @@ export class CarComponent implements OnInit {
   onSubmit() {
     const car: Car = this.carForm.value;
     if (this.edit) {
-      this.carService.editCar(car).subscribe(result => this.router.navigate(['/cars']));
+      this.carService.editCar(car).subscribe(result => this.router.navigate(['/car-list']));
     } else {
-      this.carService.saveCar(car).subscribe(result => this.router.navigate(['/cars']));
+      this.carService.saveCar(car).subscribe(result => this.router.navigate(['/car-list']));
     }
   }
 
   onCancelClicked() {
-    this.router.navigate(['/cars']);
+    this.router.navigate(['/car-list']);
   }
 
   getColor(color) {

@@ -1,0 +1,15 @@
+<div>
+  <p>
+    <span><b>{{ 'MODEL' | translate }}: </b></span>
+    <span>{{ car.model }}</span>
+  </p>
+  <p>
+    <span><b>{{ 'YEAR' | translate }}: </b></span>
+    <span>{{ car.year }}</span>
+  </p>
+  <div class="color">
+    <span><b>{{ 'COLOR' | translate }}: </b></span>
+    <div [style.background-color]="car.color" class="div-color"></div>
+  </div>
+  <button mat-button class="button-ok" (click)="onOkClicked()">Ok</button>  
+</div>

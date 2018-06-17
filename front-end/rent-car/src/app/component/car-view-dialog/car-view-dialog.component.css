@@ -1,0 +1,16 @@
+.div-color {
+    width: 20px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 20px;
+    margin-left: 10px;
+}
+
+.color {
+    display: flex;    
+}
+
+.button-ok {
+    margin-top: 20px;
+    float: right;
+}
