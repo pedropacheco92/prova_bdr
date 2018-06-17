@@ -40,11 +40,11 @@ export class CarComponent implements OnInit {
       this.edit = params['id'] != null;
       if (this.edit) {
         this.loadCar(params['id']);
-        this.label = 'Edita Carro';
-        this.labelButton = 'Salvar';
+        this.label = this.translate.instant('EDIT_CAR');
+        this.labelButton = this.translate.instant('SAVE');
       } else {
-        this.label = 'Novo Carro';
-        this.labelButton = 'Criar';
+        this.label = this.translate.instant('NEW_CAR');
+        this.labelButton = this.translate.instant('CREATE');
       }
     });
   }
