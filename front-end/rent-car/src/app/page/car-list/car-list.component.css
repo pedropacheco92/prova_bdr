@@ -11,29 +11,29 @@
     min-width: 300px;
     max-width: 800px;
     margin: auto;
-  }
-  
-  .example-header {
+}
+
+.example-header {
     min-height: 64px;
     min-width: 300px;
     max-width: 800px;
     padding: 8px 24px 0;
     margin: auto;
-  }
-  
-  .mat-form-field {
+}
+
+.mat-form-field {
     font-size: 14px;
     width: 100%;
-  }
-  
-  .mat-table {
+}
+
+.mat-table {
     overflow: auto;
     /* max-height: 1000px; */
-  }
+}
 
-  .div-color {
+.div-color {
     width: 20px;
     height: 20px;
     border: 1px solid black;
     border-radius: 20px;
-  }
+}

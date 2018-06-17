@@ -20,11 +20,15 @@ export class CarComponent implements OnInit {
   private edit: boolean;
   private year = new Date().getFullYear();
 
+  modelForm = new FormControl('', [Validators.required]);
+  yearForm = new FormControl('', [Validators.required, Validators.max(this.year), Validators.min(this.year - 30)]);
+  colorForm = new FormControl('', [Validators.required]);
+
   carForm = new FormGroup ({
     id: new FormControl(''),
-    model: new FormControl('', [Validators.required]),
-    year: new FormControl('', [Validators.required, Validators.max(this.year), Validators.min(this.year - 30)]),
-    color: new FormControl('', [Validators.required])
+    model: this.modelForm,
+    year: this.yearForm,
+    color: this.colorForm
   });
 
   constructor(private translate: TranslateService,

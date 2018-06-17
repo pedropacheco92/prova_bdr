@@ -1,3 +1,4 @@
+import { TranslateService } from '@ngx-translate/core';
 import { Car } from './../../models/car';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
@@ -19,7 +20,7 @@ export class CarsComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(CarViewDialogComponent) carView: CarViewDialogComponent;
 
-  constructor(private router: Router, private carService: CarService, private dialog: MatDialog) {
+  constructor(private router: Router, private carService: CarService, private dialog: MatDialog, private translate: TranslateService) {
     this.carService.getAllCars().subscribe(cars => {
       this.dataSource = new MatTableDataSource(cars);
       this.dataSource.paginator = this.paginator;

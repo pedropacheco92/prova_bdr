@@ -8,18 +8,22 @@
     margin-top: 100px;
     border: 2px solid Gainsboro;
     border-radius: 2px;
-  }
-  
-  mat-form-field {
+}
+
+mat-form-field {
     width: 100%;
     margin-right: 30px;
-  }
+}
 
-  .save {
+.save {
     margin-right: 30px;
-  }
+}
+
+.button-div {
+    margin-top: 20px;
+}
 
 input.input-year::-webkit-outer-spin-button,
 input.input-year::-webkit-inner-spin-button {
-  display: none;
+    display: none;
 }

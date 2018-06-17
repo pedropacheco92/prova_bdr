@@ -2,20 +2,25 @@
   <p>{{ label }}</p>
   <form [formGroup]="carForm" (ngSubmit)="onSubmit()">
     <mat-form-field>
-      <input matInput placeholder="Model" formControlName="model">
+      <input matInput placeholder="{{ 'MODEL' | translate}}" formControlName="model">
+      <mat-error *ngIf="modelForm.invalid">{{ 'MODEL' | translate }} {{ 'CANNOT_BE_EMPTY' | translate }}</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <input matInput placeholder="Year" formControlName="year" maxlength="4" type="number" class="input-year">
+      <input matInput placeholder="{{ 'YEAR' | translate }}" formControlName="year" maxlength="4" type="number" class="input-year">
+      <mat-error *ngIf="yearForm.hasError('required')">{{ 'YEAR' | translate }} {{ 'CANNOT_BE_EMPTY' | translate }}</mat-error>
+      <mat-error *ngIf="yearForm.hasError('min')">{{ 'YEAR' | translate }} {{ 'CANNOT_BE_SMALLER_THAN' | translate }} {{ year - 30 }}</mat-error>
+      <mat-error *ngIf="yearForm.hasError('max')">{{ 'YEAR' | translate }} {{ 'CANNOT_BE_GREATER_THAN' | translate }} {{ year }}</mat-error>
     </mat-form-field>
 
     <mat-form-field>
-      <mat-select placeholder="Select" formControlName="color">
+      <mat-select placeholder="{{ 'COLOR' | translate }}" formControlName="color">
         <mat-option *ngFor="let color of colors" value="{{color}}">{{ getColor(color) }}</mat-option>
       </mat-select>
+      <mat-error *ngIf="colorForm.invalid">{{ 'COLOR' | translate }} {{ 'CANNOT_BE_EMPTY' | translate }}</mat-error>
     </mat-form-field>
   </form>
-  <div>
+  <div class="button-div">
     <button mat-raised-button color="primary" type="submit" class="save" [disabled]="!carForm.valid" (click)="onSubmit()">{{ labelButton }}</button>
     <button mat-raised-button (click)="onCancelClicked()">{{ 'CANCEL' | translate }}</button>
   </div>
