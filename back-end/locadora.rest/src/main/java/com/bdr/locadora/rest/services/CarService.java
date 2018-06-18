@@ -12,8 +12,14 @@ import com.bdr.locadora.rest.models.Color;
 @Service
 public class CarService {
 
+	/**
+	 * Where the cars are stored
+	 */
 	private Map<Long, Car> cars = new HashMap<>();
 
+	/**
+	 * Create a few examples
+	 */
 	public CarService() {
 		this.cars.put(1L, new Car(1L, "Fiesta", 2015, Color.BLACK));
 		this.cars.put(2L, new Car(2L, "Corsa", 2014, Color.WHITE));
@@ -44,6 +50,12 @@ public class CarService {
 		return this.cars.remove(id, this.cars.get(id));
 	}
 
+	/**
+	 * get the highest key and create a new car with that key
+	 *
+	 * @param car
+	 * @return Car
+	 */
 	public Car create(Car car) {
 		this.cars.keySet().stream().max(Long::compareTo).ifPresent(id -> {
 			car.setId(id + 1);
