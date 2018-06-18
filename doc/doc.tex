@@ -5,15 +5,58 @@
 \author{Pedro Henrique Pacheco}
 \date{Junho 2018}
 
-
 \begin{document}
-
 \maketitle
 
-\section{Introduction}
-O objetivo desde programa é criar uma locadora de carros
+O objetivo desde projeto é criar uma locadora de carros,
+porém com a implementação de apenas o cadastro de carros.
 
-\section{Conclusion}
-``I always thought something was fundamentally wrong with the universe'' 
+Esse projeto com criado utilizando \textbf{Java} no \textit{back-end} com \textit{Spring Boot}
+e \textbf{Angular 6} no \textit{front-end}.
+
+E para documentação foi utilizando alguns conceitos da técnica Caso de Uso 2.0,
+a qual vem para estender o Caso de Uso afim de torna-lo uma técnica mais ágil.
+
+\section{História de usuário}
+Como usuário do sistema de locadora, eu quero ver todos os carros que atualmente temos cadastrados,
+bem como poder incluir novos carros, edita-los ou até mesmo excluí-los.
+
+\section{Gerenciamento de carros}
+\textbf{Ator:} usuário do sistema.
+\subsection{Pré-condição}
+O usuário deverá possuir algum carro cadastrado.
+
+\subsection{Fluxo básico}
+\begin{enumerate}
+    \item Caso começa com o usuário na listagem de carros.
+    \item A tela contém uma lista com paginação e um botão para adicionar um carro.
+    \item Ao clicar em adicionar um carro ele deve navegar para a tela contendo o formulário do cadastro do carro, com as opções de \textbf{Criar} e \textbf{Cancelar}
+    \item Ao Salvar, deve mostrar uma notificação de sucesso e retomar a listagem de carros.    
+\end{enumerate}
+
+\subsection{Fluxos alternativos}
+\subsubsection{Excluir carro}
+\begin{enumerate}
+    \item Na listagem de carros, deve-se clicar na ação de exclusão.
+    \item Após a confirmação da exclusão deve continuar na listagem de carros.
+\end{enumerate}
+
+\subsubsection{Edição do carro}
+\begin{enumerate}
+    \item Na listagem de carros, deve-se clicar na ação de edição.
+    \item O sistema navega para a tela de edição do carro com as opções \textbf{Salvar} e \textbf{Cancelar}
+    \item Ao Salvar, deve mostrar uma notificação de sucesso e retomar a listagem de carros.
+\end{enumerate}
+
+\subsubsection{Visualização do carro}
+\begin{enumerate}
+    \item Na listagem de carros, deve-se clicar na ação de visualizar.
+    \item O sistema mostra as informações do carro em formato de modal.
+\end{enumerate}
+
+\subsection{Pós-condição}
+Ao realizar alguma ação sobre o carro, a listagem sempre deve ser atualizada.
+
+\section{Use Case Slices}
+
 \end{document}
-
