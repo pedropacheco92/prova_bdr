@@ -2,7 +2,7 @@ import { TranslateService } from '@ngx-translate/core';
 import { Car } from './../../models/car';
 import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { MatTableDataSource, MatPaginator, MatSort, MatDialog } from '@angular/material';
+import { MatTableDataSource, MatPaginator, MatSort, MatDialog, MatSnackBar } from '@angular/material';
 import { CarService } from '../../service/car.service';
 import { CarViewDialogComponent } from '../../component/car-view-dialog/car-view-dialog.component';
 
@@ -20,7 +20,12 @@ export class CarsComponent implements OnInit {
   @ViewChild(MatSort) sort: MatSort;
   @ViewChild(CarViewDialogComponent) carView: CarViewDialogComponent;
 
-  constructor(private router: Router, private carService: CarService, private dialog: MatDialog, private translate: TranslateService) {
+  constructor(private router: Router,
+    private carService: CarService,
+    private dialog: MatDialog,
+    private translate: TranslateService,
+    private snackBar: MatSnackBar) {
+
     this.carService.getAllCars().subscribe(cars => {
       this.dataSource = new MatTableDataSource(cars);
       this.dataSource.paginator = this.paginator;
@@ -57,14 +62,29 @@ export class CarsComponent implements OnInit {
 
   onDelete(row: Car) {
     this.carService.deleteCar(row.id).subscribe(result => {
-      if (result) {
+      if (result.ok) {
         this.carService.getAllCars().subscribe(cars => {
           this.dataSource = new MatTableDataSource(cars);
+          this.snackBar.openFromComponent(DeletedSnackBarComponent, {
+            duration: 1000,
+          });
         });
       } else {
         alert('Erro no deletar');
       }
     });
   }
+
+}
+
+
+@Component({
+  selector: 'app-snack-bar-deleted',
+  template: '<div>{{ "CAR_DELETED" | translate }}<div>',
+  styles: [``],
+})
+export class DeletedSnackBarComponent {
+
+  constructor(private translate: TranslateService) {}
 
 }

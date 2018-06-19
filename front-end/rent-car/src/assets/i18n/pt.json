@@ -4,6 +4,8 @@
     "CANNOT_BE_SMALLER_THAN": "não pode ser menor que",
     "CANNOT_BE_GREATER_THAN": "não pode ser maior que",
     "CAR": "Carro",
+    "CAR_DELETED": "Carro deletado!",
+    "CAR_SAVED": "Carro salvo!",
     "CARS": "Carros",
     "COLOR": "Cor",
     "CREATE": "Criar",

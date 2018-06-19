@@ -5,6 +5,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { Color } from '../../models/color';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { MatSnackBar } from '@angular/material';
 
 @Component({
   selector: 'app-car',
@@ -34,7 +35,8 @@ export class CarComponent implements OnInit {
   constructor(private translate: TranslateService,
     private router: Router,
     private activatedRoute: ActivatedRoute,
-    private carService: CarService) {
+    private carService: CarService,
+    private snackBar: MatSnackBar) {
 
     this.activatedRoute.queryParams.subscribe(params => {
       this.edit = params['id'] != null;
@@ -65,6 +67,9 @@ export class CarComponent implements OnInit {
     } else {
       this.carService.saveCar(car).subscribe(result => this.router.navigate(['/car-list']));
     }
+    this.snackBar.openFromComponent(SavedSnackBarComponent, {
+      duration: 1000,
+    });
   }
 
   onCancelClicked() {
@@ -76,3 +81,15 @@ export class CarComponent implements OnInit {
   }
 
 }
+
+@Component({
+  selector: 'app-snack-bar-deleted',
+  template: '<div>{{ "CAR_SAVED" | translate }}<div>',
+  styles: [``],
+})
+export class SavedSnackBarComponent {
+
+  constructor(private translate: TranslateService) {}
+
+}
+

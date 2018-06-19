@@ -3,15 +3,15 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { MatToolbarModule, MatButtonModule, MatIconModule, MatTableModule, MatSortModule,
   MatPaginatorModule, MatTabsModule, MatFormFieldModule, MatInputModule, MatChipsModule,
-  MatOptionModule, MatSelectModule, MatCardModule, MatDialogModule } from '@angular/material';
+  MatOptionModule, MatSelectModule, MatCardModule, MatDialogModule, MatSnackBarModule } from '@angular/material';
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { AppComponent } from './app.component';
-import { CarsComponent } from './page/car-list/car-list.component';
-import { CarComponent } from './page/car/car.component';
+import { CarsComponent, DeletedSnackBarComponent } from './page/car-list/car-list.component';
+import { CarComponent, SavedSnackBarComponent } from './page/car/car.component';
 import { MainComponent } from './page/main/main.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { CarViewDialogComponent } from './component/car-view-dialog/car-view-dialog.component';
@@ -33,10 +33,14 @@ export function HttpLoaderFactory(http: HttpClient) {
     CarsComponent,
     CarComponent,
     MainComponent,
-    CarViewDialogComponent
+    CarViewDialogComponent,
+    DeletedSnackBarComponent,
+    SavedSnackBarComponent
   ],
   entryComponents: [
-    CarViewDialogComponent
+    CarViewDialogComponent,
+    DeletedSnackBarComponent,
+    SavedSnackBarComponent
   ],
   imports: [
     BrowserModule,
@@ -67,7 +71,8 @@ export function HttpLoaderFactory(http: HttpClient) {
     MatOptionModule,
     MatSelectModule,
     MatCardModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSnackBarModule
   ],
   providers: [],
   bootstrap: [AppComponent]

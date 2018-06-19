@@ -25,8 +25,8 @@ export class CarService {
     return this.http.post<Car>(url, car);
   }
 
-  deleteCar(id: number): Observable<boolean> {
-    return this.http.delete<boolean>(url + '/' + id);
+  deleteCar(id: number): Observable<any> {
+    return this.http.delete(url + '/' + id, { observe: 'response' });
   }
 
   editCar(car: Car): Observable<Car> {
