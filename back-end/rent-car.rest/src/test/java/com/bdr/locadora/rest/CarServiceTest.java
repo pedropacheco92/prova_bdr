@@ -81,7 +81,7 @@ public class CarServiceTest {
 	@Test
 	public void testDelete() {
 		// given
-		Long id = 1L;
+		Long id = 2L;
 
 		// when
 		Boolean deleted = this.carService.delete(id);

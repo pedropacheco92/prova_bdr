@@ -83,7 +83,7 @@ export class CarComponent implements OnInit {
 }
 
 @Component({
-  selector: 'app-snack-bar-deleted',
+  selector: 'app-snack-bar-saved',
   template: '<div>{{ "CAR_SAVED" | translate }}<div>',
   styles: [``],
 })
