@@ -15,3 +15,17 @@ Isso irá buildar o projeto angular e iniciar o servidor e abrir o navegador na 
 
 ### Back-End
 No *back-end* foi utilizado **Spring Boot**
+
+Para executar o projeto deve-se ter instalado *maven*. Então deve-se executar na pasta *back-end/rent-car.rest* o comando:
+
+`mvn clean install`
+
+O qual irá buildar o projeto e criar um arquivo *jar* dentro da pasta target, que ao ser executado inicia um servidor Tomcat automaticamente.
+Para executa-lo basta rodar o comando:
+
+`java -jar rent-car.rest-0.0.1-SNAPSHOT.jar`
+
+#### Eclipse IDE
+Para a edição do projeto no *Eclipse* é preciso instalar o *lombok*, disponível em: https://projectlombok.org/
+
+Com o *lombok* instalado no *Eclipse* basta importar o projeto *maven*.
